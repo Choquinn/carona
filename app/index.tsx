@@ -43,12 +43,13 @@ const styles = StyleSheet.create({
 
   text: {
     textAlign: "center",
-    fontSize: 15
+    fontWeight: "bold",
+    fontSize: 17
   },
 
   text1: {
     textAlign: "center",
-    fontSize: 13
+    fontSize: 15
   }
 })
 
