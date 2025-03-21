@@ -1,41 +1,24 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
-import Button from '../components/CustomButton'
+import {Link} from 'expo-router'
 
 const index = () => {
   return (
     <View>
       <Text style={styles.h1}>Como você deseja usar o app?</Text>
-      <Button
-        backgroundImage='driver.png'
-        height="150px"
-        width="150px"
-        radius="50%"
-        alignSelf="center"
-        marginTop="100px"
-        marginBottom="25px"
-        onClick={() => console.log("você clicou no botão, coma pão com banana")}
-      />
+      <Link style={styles.align} href="/auth/driver">
+        <Image style={styles.images} source={require('../assets/driver.png')}/>
+      </Link>
       <Text style={styles.text}>Motorista</Text>
       <Text style={styles.text1}>esse cachorro vai já morrer viu</Text>
-      <Image style={styles.images} source={require('../assets/Passager.png')}/>
+      <Link style={styles.align} href="/auth/passager">
+        <Image style={styles.images} source={require('../assets/Passager.png')}/>
+      </Link>
       <Text style={styles.text}>Carona</Text>
       <Text style={styles.text1}>Só comendo pão com banana</Text>
     </View>
   )
 }
-
-/*<h1>Colorful Custom Button Components</h1>
-<Image style={styles.images} source={require('../assets/driver.png')}/>
-      <Button 
-        border="none"
-        color="pink"
-        height = "200px"
-        onClick={() => console.log("You clicked on the pink circle!")}
-        radius = "50%"
-        width = "200px"
-        children = "I'm a pink circle!"
-      />*/
 
 const styles = StyleSheet.create({
   h1: {
@@ -44,6 +27,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     marginTop: 20
+  },
+
+  align: {
+    alignSelf: "center"
   },
 
   images: {
